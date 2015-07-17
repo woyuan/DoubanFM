@@ -1757,14 +1757,6 @@ namespace DoubanFM
 			Core.UrlHelper.OpenLink("http://www.kfstorm.com/blog/doubanfm/");
 		}
 
-	    private void BtnHelp_Click(object sender, RoutedEventArgs e)
-		{
-			BtnHelp.IsEnabled = false;
-			HelpWindow window = new HelpWindow();
-			window.Closed += delegate { BtnHelp.IsEnabled = true; _windowMouseLeaveTimer.Start(); };
-			window.Show();
-		}
-
         private void HlPlayed_Click(object sender, RoutedEventArgs e)
         {
             Core.UrlHelper.OpenLink("http://douban.fm/mine?type=played");

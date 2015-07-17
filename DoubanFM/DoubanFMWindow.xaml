@@ -452,7 +452,6 @@ Website : http://www.kfstorm.com
                                     <StackPanel Orientation="Horizontal">
                                         <Button x:Name="GoToHomePage" Height="40" Style="{StaticResource IconStyle}" Margin="0,0,10,0" Click="GoToHomePage_Click"/>
                                         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26.667" Content="{x:Static resx:Resources.WindowTitleShort}"/>
-                                        <Button x:Name="BtnHelp" Height="40" Click="BtnHelp_Click" Style="{StaticResource HelpStyle}"/>
                                     </StackPanel>
                                 </Viewbox>
                                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{x:Static resx:Resources.ThirdPartyClientsBlock}"/>

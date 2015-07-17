@@ -101,9 +101,6 @@
     <Compile Include="ExceptionWindow.xaml.cs">
       <DependentUpon>ExceptionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HelpWindow.xaml.cs">
-      <DependentUpon>HelpWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UISettingWindow.xaml.cs">
       <DependentUpon>UISettingWindow.xaml</DependentUpon>
     </Compile>
@@ -133,10 +130,6 @@
     <Page Include="ExceptionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HelpWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
