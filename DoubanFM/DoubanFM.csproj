@@ -87,15 +87,15 @@
     <Compile Include="Interop\SWP.cs" />
     <Compile Include="Interop\WH.cs" />
     <Compile Include="Interop\WS.cs" />
-    <Compile Include="Resources\Resources.zh-CN.Designer.cs">
-      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="Resources\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Resources.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="Wmi\DisplayConfiguration.cs" />
     <Compile Include="ExceptionWindow.xaml.cs">
@@ -103,15 +103,6 @@
     </Compile>
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NotifyIcon\PopupControlPanel.xaml.cs">
-      <DependentUpon>PopupControlPanel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NotifyIcon\BalloonSongInfo.xaml.cs">
-      <DependentUpon>BalloonSongInfo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NotifyIcon\PopupLiked.xaml.cs">
-      <DependentUpon>PopupLiked.xaml</DependentUpon>
     </Compile>
     <Compile Include="UISettingWindow.xaml.cs">
       <DependentUpon>UISettingWindow.xaml</DependentUpon>
@@ -150,18 +141,6 @@
     <Page Include="HelpWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="NotifyIcon\BalloonSongInfo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NotifyIcon\PopupControlPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NotifyIcon\PopupLiked.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -247,10 +226,6 @@
     <ProjectReference Include="..\DwmHelper\DwmHelper.csproj">
       <Project>{368cdbe6-0ba2-4dad-aceb-fbb8eedb1bd7}</Project>
       <Name>DwmHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NotifyIconWpf\NotifyIconWpf.csproj">
-      <Project>{7AC63864-7638-41C4-969C-D3197EF2BED9}</Project>
-      <Name>NotifyIconWpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

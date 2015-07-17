@@ -7,7 +7,6 @@
 using System.Configuration;
 using DoubanFM.Bass;
 using DoubanFM.Core;
-using DoubanFM.NotifyIcon;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -193,8 +192,7 @@ namespace DoubanFM
 			ClearSetupFiles();
 			InitBass();
 			AddPlayerEventListener();
-			InitNotifyIcon();
-			InitTimers();
+		    InitTimers();
 			CheckMappedFile();
 			ReportUseAtStartup();
 			InitLyrics();
@@ -380,15 +378,7 @@ namespace DoubanFM
 			}
 		}
 
-		/// <summary>
-		/// 初始化托盘图标
-		/// </summary>
-		private void InitNotifyIcon()
-		{
-			NotifyIcon.Visibility = _player.Settings.AlwaysShowNotifyIcon ? Visibility.Visible : Visibility.Hidden;
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 给播放器的各种事件添加处理代码
 		/// </summary>
         private void AddPlayerEventListener()
@@ -417,7 +407,6 @@ namespace DoubanFM
             _player.CurrentChannelChanged += new EventHandler((o, e) =>
             {
                 Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 频道已改变，当前频道为" + _player.CurrentChannel);
-                CloseCurrentBalloon();
                 ChangeChosenChannelList();
                 //更新JumpList
                 //if (!_player.CurrentChannel.IsDj)
@@ -426,7 +415,6 @@ namespace DoubanFM
             //歌曲已改变
             _player.CurrentSongChanged += new EventHandler((o, e) =>
             {
-                CloseCurrentBalloon();
                 if (_player.CurrentSong != null)
                 {
                     Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 歌曲已改变，当前歌曲为" + _player.CurrentSong);
@@ -469,7 +457,6 @@ namespace DoubanFM
             _player.Stoped += new EventHandler((o, e) =>
             {
                 Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 音乐已停止");
-                CloseCurrentBalloon();
 
                 stoped = true;
                 VolumeFadeOut.Begin();
@@ -509,13 +496,11 @@ namespace DoubanFM
                     {
                         LikeThumb.ImageSource = (ImageSource)FindResource("LikeThumbImage");
                         LikeThumb.Description = DoubanFM.Resources.Resources.UnlikeThumbButton;
-                        //NotifyIcon_Heart.Image = NotifyIconImage_Like_Like;
                     }
                     else
                     {
                         LikeThumb.ImageSource = (ImageSource)FindResource("UnlikeThumbImage");
                         LikeThumb.Description = DoubanFM.Resources.Resources.LikeThumbButton;
-                        //NotifyIcon_Heart.Image = NotifyIconImage_Like_Unlike;
                     }
                 else
                     LikeThumb.ImageSource = (ImageSource)FindResource("LikeThumbImage_Disabled");
@@ -531,7 +516,6 @@ namespace DoubanFM
                 else
                     LikeThumb.ImageSource = (ImageSource)FindResource("LikeThumbImage_Disabled");
                 LikeThumb.IsEnabled = _player.IsLikedEnabled;
-                //NotifyIcon_Heart.Enabled = _player.IsLikedEnabled;
             });
             //垃圾桶功能启用状态改变
             _player.IsNeverEnabledChanged += new EventHandler((o, e) =>
@@ -542,7 +526,6 @@ namespace DoubanFM
                 else
                     NeverThumb.ImageSource = (ImageSource)FindResource("NeverThumbImage_Disabled");
                 NeverThumb.IsEnabled = _player.IsNeverEnabled;
-                //NotifyIcon_Never.Enabled = _player.IsNeverEnabled;
             });
             //获取播放列表失败
             _player.GetPlayListFailed += new EventHandler<PlayList.PlayListEventArgs>((o, e) =>
@@ -1033,13 +1016,6 @@ namespace DoubanFM
 				else
 					button.Visibility = Visibility.Collapsed;
 			}
-			foreach (FrameworkElement button in ((PopupControlPanel)NotifyIcon.TrayPopup).Shares.Children)
-			{
-				if (ShareSetting.DisplayedSites.Contains((Share.Sites)button.Tag))
-					button.Visibility = Visibility.Visible;
-				else
-					button.Visibility = Visibility.Collapsed;
-			}
 		}
 
 		/// <summary>
@@ -1282,51 +1258,6 @@ namespace DoubanFM
             string stringB = string.Format("    {0} - {1}", DoubanFM.Resources.Resources.WindowTitle, _player.CurrentChannel.Name);
 			this.Title = stringA + stringB;
 
-			string song = _player.CurrentSong.ToString();
-			if (song.Length <= 63)							//Windows限制托盘图标的提示信息最长为63个字符
-			{
-				NotifyIcon.ToolTipText = song;
-			}
-			else if (this.Title.Length <= 63)
-			{
-				NotifyIcon.ToolTipText = this.Title;
-			}
-			else
-			{
-				string dotdotdot = "...";
-				string text = song.Substring(0, Math.Max(0, 63 - dotdotdot.Length));
-				NotifyIcon.ToolTipText = text + dotdotdot;
-			}
-
-			((NotifyIcon.PopupControlPanel)NotifyIcon.TrayPopup).HideCover();
-
-			//延迟弹出气泡
-			CustomBaloon = null;
-			Song lastSong = _player.CurrentSong;
-			var timer = new DispatcherTimer();
-			timer.Interval = TimeSpan.FromSeconds(2);
-			timer.Tick += delegate
-			{
-				if (_player.Settings.ShowBalloonWhenSongChanged && !NotifyIcon.TrayPopupResolved.IsOpen && !NotifyIcon.TrayToolTipResolved.IsOpen)
-				{
-				    if (!IsActive)
-				    {
-				        if (!stoped && CustomBaloon == null && _player.CurrentSong == lastSong)
-				        {
-				            CustomBaloon = new NotifyIcon.BalloonSongInfo();
-				            var image = CustomBaloon.Cover.Source as BitmapSource;
-				            if (image != null && !image.IsDownloading)
-				            {
-				                CustomBaloon.Cover.Opacity = 1;
-				            }
-				            NotifyIcon.ShowCustomBalloon(CustomBaloon, System.Windows.Controls.Primitives.PopupAnimation.Fade, 5000);
-				        }
-				    }
-				}
-				timer.Stop();
-			};
-			timer.Start();
-
 			//ChannelTextBlock.Text = _player.CurrentChannel.Name;
 			TotalTime.Text = TimeSpanToStringConverter.QuickConvert(_player.CurrentSong.Length);
 			CurrentTime.Text = TimeSpanToStringConverter.QuickConvert(TimeSpan.Zero);
@@ -1350,28 +1281,7 @@ namespace DoubanFM
 			//timer.Start();
 		}
 
-		/// <summary>
-		/// 弹出气泡
-		/// </summary>
-		public NotifyIcon.BalloonSongInfo CustomBaloon;
-
-		/// <summary>
-		/// 关闭当前气泡
-		/// </summary>
-		private void CloseCurrentBalloon()
-		{
-			if (NotifyIcon.CustomBalloon != null)
-			{
-				var balloon = NotifyIcon.CustomBalloon.Child as BalloonSongInfo;
-				if (balloon != null)
-				{
-					balloon.ClearBindings();
-				}
-			}
-			NotifyIcon.CloseBalloon();
-		}
-
-		private BitmapImage bitmap;
+	    private BitmapImage bitmap;
 		private bool downloadFailed = false;
 		private bool shouldSwitchCover = false;
 
@@ -1399,13 +1309,6 @@ namespace DoubanFM
 					shouldSwitchCover = false;
 					ChangeBackground(bitmap);
 					SwitchCover(bitmap);
-
-					((NotifyIcon.BalloonSongInfo)NotifyIcon.TrayToolTip).ShowCoverSmooth();
-					((NotifyIcon.PopupControlPanel)NotifyIcon.TrayPopup).ShowCoverSmooth();
-					if (CustomBaloon != null)
-					{
-						CustomBaloon.ShowCoverSmooth();
-					}
 				}
 			}
 		}
@@ -1591,8 +1494,6 @@ namespace DoubanFM
             {
                 appCommand.Dispose();
             }
-			if (NotifyIcon != null)
-				NotifyIcon.Dispose();
 			SaveSettings();
 		}
 
@@ -1791,34 +1692,12 @@ namespace DoubanFM
 			this.WindowState = System.Windows.WindowState.Minimized;
 		}
 
-		private void ButtonToNotifyIcon_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			this.HideMinimized();
-		}
-
 		private void ButtonExit_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
 			this.Close();
 		}
 
-		private void Window_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
-		{
-			Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + (this.IsVisible ? " 窗口可视" : " 窗口不可视"));
-			if (this.IsVisible && !_player.Settings.AlwaysShowNotifyIcon)
-			{
-				NotifyIcon.Visibility = Visibility.Hidden;
-			}
-			else
-			{
-				//窗口关闭时IsVisiblie会自动变为false，而关闭时不应再改变托盘图标的可见性
-				if (this.WindowState == System.Windows.WindowState.Minimized || this.Visibility != Visibility.Visible)
-				{
-					NotifyIcon.Visibility = Visibility.Visible;
-				}
-			}
-		}
-
-		private void VisitOfficialWebsite_Click(object sender, System.Windows.RoutedEventArgs e)
+	    private void VisitOfficialWebsite_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
 			Core.UrlHelper.OpenLink("http://douban.fm/");
 		}
@@ -2009,14 +1888,6 @@ namespace DoubanFM
         {
             Core.UrlHelper.OpenLink("http://douban.fm/mine?type=banned");
         }
-
-        private void NotifyIcon_TrayLeftMouseUp(object sender, RoutedEventArgs e)
-		{
-			if (this.IsVisible)
-				this.HideMinimized();
-			else
-				this.ShowFront();
-		}
 
 		private bool stoped = false;
 

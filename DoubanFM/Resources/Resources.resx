@@ -584,14 +584,8 @@ Surprise!</value>
   <data name="ShareSettingsWindowKeyShareSiteLabel" xml:space="preserve">
     <value>Sites to share on when use one-key share:</value>
   </data>
-  <data name="UISettingsWindowPopupCb" xml:space="preserve">
-    <value>Popup when switching to a new song</value>
-  </data>
   <data name="CheckBoxTopMost" xml:space="preserve">
     <value>Always on top</value>
-  </data>
-  <data name="CheckBoxAlwaysShowNotifyIcon" xml:space="preserve">
-    <value>Always show tray icon</value>
   </data>
   <data name="RadioButtonSlideCoverWhenMouseMove" xml:space="preserve">
     <value>Slide cover when the mouse hovers over</value>

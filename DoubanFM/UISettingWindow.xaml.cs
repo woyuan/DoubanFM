@@ -29,14 +29,7 @@ namespace DoubanFM
 			InitializeComponent();
 		}
 
-		private void CheckBoxAlwaysShowNotifyIcon_IsCheckedChanged(object sender, RoutedEventArgs e)
-		{
-			if (CheckBoxAlwaysShowNotifyIcon.IsChecked == false)
-				(Owner as DoubanFMWindow).NotifyIcon.Visibility = Owner.IsVisible ? Visibility.Hidden : Visibility.Visible;
-			else (Owner as DoubanFMWindow).NotifyIcon.Visibility = System.Windows.Visibility.Visible;
-		}
-
-		private void BtnScaleTransformReset_Click(object sender, RoutedEventArgs e)
+	    private void BtnScaleTransformReset_Click(object sender, RoutedEventArgs e)
 		{
 			(FindResource("Player") as DoubanFM.Core.Player).Settings.ScaleTransform = 1.0;
 		}

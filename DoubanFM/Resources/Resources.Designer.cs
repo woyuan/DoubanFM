@@ -250,15 +250,6 @@ namespace DoubanFM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Always show tray icon.
-        /// </summary>
-        public static string CheckBoxAlwaysShowNotifyIcon {
-            get {
-                return ResourceManager.GetString("CheckBoxAlwaysShowNotifyIcon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Limit download speed.
         /// </summary>
         public static string CheckBoxEnableDownloadRateRestriction {
@@ -1886,15 +1877,6 @@ namespace DoubanFM.Resources {
         public static string UISettingsWindowMainInterfaceScaleTextBlock {
             get {
                 return ResourceManager.GetString("UISettingsWindowMainInterfaceScaleTextBlock", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Popup when switching to a new song.
-        /// </summary>
-        public static string UISettingsWindowPopupCb {
-            get {
-                return ResourceManager.GetString("UISettingsWindowPopupCb", resourceCulture);
             }
         }
         

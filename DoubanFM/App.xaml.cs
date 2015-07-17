@@ -129,11 +129,6 @@ namespace DoubanFM
 						try
 						{
 							SaveSettings();
-							var mainWindow = MainWindow as DoubanFMWindow;
-							if (mainWindow != null)
-							{
-								if (mainWindow.NotifyIcon != null) mainWindow.NotifyIcon.Dispose();
-							}
 							var window = new ExceptionWindow();
 							window.ExceptionObject = exceptionObject;
 							window.ShowDialog();

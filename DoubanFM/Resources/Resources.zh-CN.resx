@@ -581,14 +581,8 @@
   <data name="ShareSettingsWindowKeyShareSiteLabel" xml:space="preserve">
     <value>一键分享的网站：</value>
   </data>
-  <data name="UISettingsWindowPopupCb" xml:space="preserve">
-    <value>换歌时弹出气泡</value>
-  </data>
   <data name="CheckBoxTopMost" xml:space="preserve">
     <value>总在最前</value>
-  </data>
-  <data name="CheckBoxAlwaysShowNotifyIcon" xml:space="preserve">
-    <value>总是显示托盘图标</value>
   </data>
   <data name="RadioButtonSlideCoverWhenMouseMove" xml:space="preserve">
     <value>当鼠标移动到封面上时滑动封面</value>

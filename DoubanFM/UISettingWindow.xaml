@@ -13,9 +13,7 @@ Website : http://www.kfstorm.com
 		Title="{x:Static resx:Resources.InterfaceSettingsButton}" Background="#FF813131" Foreground="White">
 	<Grid Width="300" Margin="10">
 		<StackPanel>
-            <CheckBox Margin="0,2" VerticalAlignment="Center" IsChecked="{Binding Settings.ShowBalloonWhenSongChanged, Mode=TwoWay, Source={StaticResource Player}}" Content="{x:Static resx:Resources.UISettingsWindowPopupCb}"/>
             <CheckBox Margin="0,2" x:Name="CheckBoxTopMost" VerticalAlignment="Center" IsChecked="{Binding Settings.TopMost, Mode=TwoWay, Source={StaticResource Player}}" Content="{x:Static resx:Resources.CheckBoxTopMost}"/>
-            <CheckBox Margin="0,2" x:Name="CheckBoxAlwaysShowNotifyIcon" VerticalAlignment="Center" IsChecked="{Binding Settings.AlwaysShowNotifyIcon, Mode=TwoWay, Source={StaticResource Player}}" Checked="CheckBoxAlwaysShowNotifyIcon_IsCheckedChanged" Unchecked="CheckBoxAlwaysShowNotifyIcon_IsCheckedChanged" Content="{x:Static resx:Resources.CheckBoxAlwaysShowNotifyIcon}" />
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition/>

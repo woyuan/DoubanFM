@@ -35,7 +35,6 @@ namespace DoubanFM.Core
 		public static readonly DependencyProperty IsMutedProperty = DependencyProperty.Register("IsMuted", typeof(bool), typeof(Settings));
 		public static readonly DependencyProperty VolumeProperty = DependencyProperty.Register("Volume", typeof(double), typeof(Settings), new PropertyMetadata(1.0));
 		public static readonly DependencyProperty SlideCoverWhenMouseMoveProperty = DependencyProperty.Register("SlideCoverWhenMouseMove", typeof(bool), typeof(Settings), new PropertyMetadata(true));
-		public static readonly DependencyProperty AlwaysShowNotifyIconProperty = DependencyProperty.Register("AlwaysShowNotifyIcon", typeof(bool), typeof(Settings));
 		public static readonly DependencyProperty AutoUpdateProperty = DependencyProperty.Register("AutoUpdate", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty LastTimeCheckUpdateProperty = DependencyProperty.Register("LastTimeCheckUpdate", typeof(DateTime), typeof(Settings), new PropertyMetadata(DateTime.MinValue));
 		public static readonly DependencyProperty OpenAlbumInfoWhenClickCoverProperty = DependencyProperty.Register("OpenAlbumInfoWhenClickCover", typeof(bool), typeof(Settings), new PropertyMetadata(false));
@@ -52,7 +51,6 @@ namespace DoubanFM.Core
 		public static readonly DependencyProperty BackgroundProperty = DependencyProperty.Register("Background", typeof(Color), typeof(Settings), new PropertyMetadata(ColorConverter.ConvertFromString("#FF1960AF")));
 		public static readonly DependencyProperty FirstTimeProperty = DependencyProperty.Register("FirstTime", typeof(bool), typeof(Settings), new PropertyMetadata(false));
 		public static readonly DependencyProperty MainWindowFontProperty = DependencyProperty.Register("MainWindowFont", typeof(FontFamily), typeof(Settings), new PropertyMetadata(System.Windows.SystemFonts.MessageFontFamily));
-		public static readonly DependencyProperty ShowBalloonWhenSongChangedProperty = DependencyProperty.Register("ShowBalloonWhenSongChanged", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty BackgroundTransparencyProperty = DependencyProperty.Register("BackgroundTransparency", typeof(double), typeof(Settings));
         public static readonly DependencyProperty DownloadSiteProperty = DependencyProperty.Register("DownloadSite", typeof(DownloadSite), typeof(Settings), new PropertyMetadata(Enum.GetValues(typeof(DownloadSite)).Cast<DownloadSite>().Aggregate((DownloadSite)0, (left, right) => left | right)));
 		public static readonly DependencyProperty TrimBracketsProperty = DependencyProperty.Register("TrimBrackets", typeof(bool), typeof(Settings), new PropertyMetadata(true));
@@ -157,14 +155,6 @@ namespace DoubanFM.Core
 		{
 			get { return (bool)GetValue(SlideCoverWhenMouseMoveProperty); }
 			set { SetValue(SlideCoverWhenMouseMoveProperty, value); }
-		}
-		/// <summary>
-		/// 总是显示托盘图标
-		/// </summary>
-		public bool AlwaysShowNotifyIcon
-		{
-			get { return (bool)GetValue(AlwaysShowNotifyIconProperty); }
-			set { SetValue(AlwaysShowNotifyIconProperty, value); }
 		}
 		/// <summary>
 		/// 自动更新
@@ -293,14 +283,6 @@ namespace DoubanFM.Core
 		{
 			get { return (FontFamily)GetValue(MainWindowFontProperty); }
 			set { SetValue(MainWindowFontProperty, value); }
-		}
-		/// <summary>
-		/// 歌曲改变时弹出气泡
-		/// </summary>
-		public bool ShowBalloonWhenSongChanged
-		{
-			get { return (bool)GetValue(ShowBalloonWhenSongChangedProperty); }
-			set { SetValue(ShowBalloonWhenSongChangedProperty, value); }
 		}
 		/// <summary>
 		/// 窗口背景透明度
@@ -474,8 +456,6 @@ namespace DoubanFM.Core
 			catch { }
 			try { SlideCoverWhenMouseMove = info.GetBoolean("SlideCoverWhenMouseMove"); }
 			catch { }
-			try { AlwaysShowNotifyIcon = info.GetBoolean("AlwaysShowNotifyIcon"); }
-			catch { }
 			try { AutoUpdate = info.GetBoolean("AutoUpdate"); }
 			catch { }
 			try { LastTimeCheckUpdate = info.GetDateTime("LastTimeCheckUpdate"); }
@@ -517,8 +497,6 @@ namespace DoubanFM.Core
 			try { FirstTime = info.GetBoolean("FirstTime"); }
 			catch { }
 			try { MainWindowFont = new FontFamily(info.GetString("MainWindowFont")); }
-			catch { }
-			try { ShowBalloonWhenSongChanged = info.GetBoolean("ShowBalloonWhenSongChanged"); }
 			catch { }
 			try { BackgroundTransparency = info.GetDouble("BackgroundTransparency"); }
 			catch { }
@@ -571,7 +549,6 @@ namespace DoubanFM.Core
 			info.AddValue("IsMuted", IsMuted);
 			info.AddValue("Volume", Volume);
 			info.AddValue("SlideCoverWhenMouseMove", SlideCoverWhenMouseMove);
-			info.AddValue("AlwaysShowNotifyIcon", AlwaysShowNotifyIcon);
 			info.AddValue("AutoUpdate", AutoUpdate);
 			info.AddValue("LastTimeCheckUpdate", LastTimeCheckUpdate);
 			info.AddValue("OpenAlbumInfoWhenClickCover", OpenAlbumInfoWhenClickCover);
@@ -594,7 +571,6 @@ namespace DoubanFM.Core
 			{
 				info.AddValue("MainWindowFont", MainWindowFont.ToString());
 			}
-			info.AddValue("ShowBalloonWhenSongChanged", ShowBalloonWhenSongChanged);
 			info.AddValue("BackgroundTransparency", BackgroundTransparency);
 			info.AddValue("DownloadSite", DownloadSite);
 			info.AddValue("TrimBrackets", TrimBrackets);
