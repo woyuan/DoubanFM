@@ -274,9 +274,6 @@
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>A third-party client</value>
   </data>
-  <data name="DownloadSearchButton" xml:space="preserve">
-    <value>Search for music downloads</value>
-  </data>
   <data name="AvailableAfterLoginBorder" xml:space="preserve">
     <value>Available after login</value>
   </data>
@@ -311,9 +308,6 @@ Surprise!</value>
   <data name="CheckBoxIsSearchFilterEnabled" xml:space="preserve">
     <value>Remove search results that can not be played</value>
   </data>
-  <data name="DownloadSearchSettingsGroupBox" xml:space="preserve">
-    <value>Download Searching Settings</value>
-  </data>
   <data name="OutputDevicesTextBlock" xml:space="preserve">
     <value>Output device</value>
   </data>
@@ -322,9 +316,6 @@ Surprise!</value>
   </data>
   <data name="TrimBracketsCheckBox" xml:space="preserve">
     <value>Auto remove brackets and their contents</value>
-  </data>
-  <data name="CbSearchBaiduMusic" xml:space="preserve">
-    <value>Search Baidu Music</value>
   </data>
   <data name="ProxyServerGroupBox" xml:space="preserve">
     <value>Proxy</value>
@@ -665,9 +656,6 @@ Application will restart after reset.</value>
   </data>
   <data name="LanguageChangedHint" xml:space="preserve">
     <value>Language setting changed and will take effect at the next start up.</value>
-  </data>
-  <data name="CbSearchQQMusic" xml:space="preserve">
-    <value>Search QQ Music</value>
   </data>
   <data name="BitRate" xml:space="preserve">
     <value>Bit rate</value>

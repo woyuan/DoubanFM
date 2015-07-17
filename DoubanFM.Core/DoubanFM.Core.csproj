@@ -46,7 +46,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DownloadSearch\DownloadSearch.cs" />
     <Compile Include="DownloadSearch\DownloadSite.cs" />
     <Compile Include="Json\JsonHelper.cs" />
     <Compile Include="Json\SongInfo.cs" />

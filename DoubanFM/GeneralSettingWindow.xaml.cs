@@ -25,9 +25,6 @@ namespace DoubanFM
             InitializeComponent();
             player = (Player)FindResource("Player");
 
-            CbSearchBaiduMusic.IsChecked = DownloadSearch.Settings.DownloadSite.HasFlag(DownloadSite.BaiduMusic);
-            CbSearchQQMusic.IsChecked = DownloadSearch.Settings.DownloadSite.HasFlag(DownloadSite.QQMusic);
-
             //Init proxy setting.
             switch (player.Settings.ProxyKind)
             {
@@ -83,31 +80,7 @@ namespace DoubanFM
 			(Owner as DoubanFMWindow).ApplyProxy();
 		}
 
-		private void CbSearchBaiduMusic_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			if (CbSearchBaiduMusic.IsChecked == true)
-			{
-				DownloadSearch.Settings.DownloadSite |= DownloadSite.BaiduMusic;
-			}
-			else
-			{
-				DownloadSearch.Settings.DownloadSite &= ~DownloadSite.BaiduMusic;
-			}
-		}
-
-        private void CbSearchQQMusic_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (CbSearchQQMusic.IsChecked == true)
-            {
-                DownloadSearch.Settings.DownloadSite |= DownloadSite.QQMusic;
-            }
-            else
-            {
-                DownloadSearch.Settings.DownloadSite &= ~DownloadSite.QQMusic;
-            }
-        }
-
-		private void ProxyKindChanged(object sender, RoutedEventArgs e)
+	    private void ProxyKindChanged(object sender, RoutedEventArgs e)
 		{
 			Settings.ProxyKinds newKind = Settings.ProxyKinds.Default;
 			if (RbNoProxy.IsChecked == true)

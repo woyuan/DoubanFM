@@ -187,24 +187,6 @@ namespace DoubanFM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search Baidu Music.
-        /// </summary>
-        public static string CbSearchBaiduMusic {
-            get {
-                return ResourceManager.GetString("CbSearchBaiduMusic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search QQ Music.
-        /// </summary>
-        public static string CbSearchQQMusic {
-            get {
-                return ResourceManager.GetString("CbSearchQQMusic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enable lyrics.
         /// </summary>
         public static string CbShowLyrics {
@@ -381,24 +363,6 @@ namespace DoubanFM.Resources {
         public static string DoubanFMOfficialWebsite {
             get {
                 return ResourceManager.GetString("DoubanFMOfficialWebsite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search for music downloads.
-        /// </summary>
-        public static string DownloadSearchButton {
-            get {
-                return ResourceManager.GetString("DownloadSearchButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download Searching Settings.
-        /// </summary>
-        public static string DownloadSearchSettingsGroupBox {
-            get {
-                return ResourceManager.GetString("DownloadSearchSettingsGroupBox", resourceCulture);
             }
         }
         

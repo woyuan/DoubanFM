@@ -871,15 +871,6 @@ namespace DoubanFM
 		}
 
 	    /// <summary>
-		/// 搜索下载
-		/// </summary>
-		public void SearchDownload()
-		{
-			if (_player.CurrentSong != null)
-				DownloadSearch.Search(_player.CurrentSong.Title, _player.CurrentSong.Artist, _player.CurrentSong.Album);
-		}
-
-		/// <summary>
 		/// 音量增
 		/// </summary>
 		public void VolumeUp(double delta = 0.1)
@@ -1920,12 +1911,7 @@ namespace DoubanFM
 			_windowMouseLeaveTimer.Start();
 		}
 
-		private void BtnDownloadSearch_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			SearchDownload();
-		}
-
-        //private void ButtonRefreshCaptcha_Click(object sender, RoutedEventArgs e)
+	    //private void ButtonRefreshCaptcha_Click(object sender, RoutedEventArgs e)
         //{
         //    _player.UserAssistant.UpdateCaptcha();
         //}

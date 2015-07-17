@@ -52,7 +52,6 @@ namespace DoubanFM.Core
 		public static readonly DependencyProperty FirstTimeProperty = DependencyProperty.Register("FirstTime", typeof(bool), typeof(Settings), new PropertyMetadata(false));
 		public static readonly DependencyProperty MainWindowFontProperty = DependencyProperty.Register("MainWindowFont", typeof(FontFamily), typeof(Settings), new PropertyMetadata(System.Windows.SystemFonts.MessageFontFamily));
 		public static readonly DependencyProperty BackgroundTransparencyProperty = DependencyProperty.Register("BackgroundTransparency", typeof(double), typeof(Settings));
-        public static readonly DependencyProperty DownloadSiteProperty = DependencyProperty.Register("DownloadSite", typeof(DownloadSite), typeof(Settings), new PropertyMetadata(Enum.GetValues(typeof(DownloadSite)).Cast<DownloadSite>().Aggregate((DownloadSite)0, (left, right) => left | right)));
 		public static readonly DependencyProperty TrimBracketsProperty = DependencyProperty.Register("TrimBrackets", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty SearchAlbumProperty = DependencyProperty.Register("SearchAlbum", typeof(bool), typeof(Settings), new PropertyMetadata(false));
 		public static readonly DependencyProperty LocationLeftProperty = DependencyProperty.Register("LocationLeft", typeof(double), typeof(Settings), new PropertyMetadata(double.NaN));
@@ -293,14 +292,6 @@ namespace DoubanFM.Core
 			set { SetValue(BackgroundTransparencyProperty, value); }
 		}
 		/// <summary>
-		/// 下载网站
-		/// </summary>
-		public DownloadSite DownloadSite
-		{
-			get { return (DownloadSite)GetValue(DownloadSiteProperty); }
-			set { SetValue(DownloadSiteProperty, value); }
-		}
-		/// <summary>
 		/// 搜索下载时自动剔除歌曲信息中的括号内容
 		/// </summary>
 		public bool TrimBrackets
@@ -500,8 +491,6 @@ namespace DoubanFM.Core
 			catch { }
 			try { BackgroundTransparency = info.GetDouble("BackgroundTransparency"); }
 			catch { }
-			try { DownloadSite = (DownloadSite)info.GetValue("DownloadSite", typeof(DownloadSite)); }
-			catch { }
 			try { TrimBrackets = info.GetBoolean("TrimBrackets"); }
 			catch { }
 			try { SearchAlbum = info.GetBoolean("SearchAlbum"); }
@@ -572,7 +561,6 @@ namespace DoubanFM.Core
 				info.AddValue("MainWindowFont", MainWindowFont.ToString());
 			}
 			info.AddValue("BackgroundTransparency", BackgroundTransparency);
-			info.AddValue("DownloadSite", DownloadSite);
 			info.AddValue("TrimBrackets", TrimBrackets);
 			info.AddValue("SearchAlbum", SearchAlbum);
 			info.AddValue("LocationLeft", LocationLeft);

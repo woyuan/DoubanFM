@@ -271,9 +271,6 @@
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>第三方客户端</value>
   </data>
-  <data name="DownloadSearchButton" xml:space="preserve">
-    <value>搜索下载</value>
-  </data>
   <data name="AvailableAfterLoginBorder" xml:space="preserve">
     <value>登录后可用</value>
   </data>
@@ -308,9 +305,6 @@
   <data name="CheckBoxIsSearchFilterEnabled" xml:space="preserve">
     <value>在搜索结果中剔除无法收听的项目</value>
   </data>
-  <data name="DownloadSearchSettingsGroupBox" xml:space="preserve">
-    <value>下载搜索设置</value>
-  </data>
   <data name="OutputDevicesTextBlock" xml:space="preserve">
     <value>输出设备</value>
   </data>
@@ -319,9 +313,6 @@
   </data>
   <data name="TrimBracketsCheckBox" xml:space="preserve">
     <value>搜索下载时自动剔除歌曲信息中的括号内容</value>
-  </data>
-  <data name="CbSearchBaiduMusic" xml:space="preserve">
-    <value>搜索百度音乐</value>
   </data>
   <data name="ProxyServerGroupBox" xml:space="preserve">
     <value>代理服务器</value>
@@ -665,9 +656,6 @@
   </data>
   <data name="LanguageChangedHint" xml:space="preserve">
     <value>显示语言设置已改变，下次启动豆瓣电台时生效。</value>
-  </data>
-  <data name="CbSearchQQMusic" xml:space="preserve">
-    <value>搜索 QQ 音乐</value>
   </data>
   <data name="BitRate" xml:space="preserve">
     <value>码率</value>

@@ -351,7 +351,6 @@ namespace DoubanFM.Core
 			UserAssistant = new UserAssistant();
 			UserAssistant.Settings = Settings;
 			ChannelSearch = new ChannelSearch(Settings);
-			DownloadSearch.Settings = Settings;
 
             //加红心功能始终启用
 		    IsLikedEnabled = true;

@@ -595,7 +595,6 @@ Website : http://www.kfstorm.com
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
 						</Grid.ColumnDefinitions>
-						<Button x:Name="BtnDownloadSearch" Grid.Column="1" Style="{StaticResource SearchStyle}" ToolTip="{x:Static resx:Resources.DownloadSearchButton}" Click="BtnDownloadSearch_Click"/>
 						<CheckBox x:Name="CheckBoxShowLyrics" Grid.Column="2" IsChecked="{Binding Settings.ShowLyrics, Source={StaticResource Player}}" Checked="CheckBoxShowLyrics_Checked" Unchecked="CheckBoxShowLyrics_Unchecked" Style="{StaticResource ShowLyricsStyle}"/>
 						<Border x:Name="BdVolumeControl" Grid.Column="3" Background="Transparent" Margin="0,0,-65,0">
 							<Viewbox StretchDirection="DownOnly">
