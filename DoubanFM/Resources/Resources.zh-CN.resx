@@ -247,15 +247,6 @@
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>歌词设置</value>
   </data>
-  <data name="ImportButton" xml:space="preserve">
-    <value>导入</value>
-  </data>
-  <data name="ExportButton" xml:space="preserve">
-    <value>导出</value>
-  </data>
-  <data name="ResetButton" xml:space="preserve">
-    <value>重置</value>
-  </data>
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>第三方客户端</value>
   </data>

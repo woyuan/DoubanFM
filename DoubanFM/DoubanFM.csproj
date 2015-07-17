@@ -77,7 +77,6 @@
     </ApplicationDefinition>
     <Compile Include="AppCommand.cs" />
     <Compile Include="ChildWindowBase.cs" />
-    <Compile Include="FilePackage.cs" />
     <Compile Include="Interop\GWL.cs" />
     <Compile Include="Interop\HOOKPROC.cs" />
     <Compile Include="Interop\HWND.cs" />

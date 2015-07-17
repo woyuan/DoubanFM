@@ -367,15 +367,6 @@ namespace DoubanFM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export.
-        /// </summary>
-        public static string ExportButton {
-            get {
-                return ResourceManager.GetString("ExportButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add to favorites.
         /// </summary>
         public static string FavoriteButton {
@@ -715,15 +706,6 @@ namespace DoubanFM.Resources {
         public static string HostComputerLabel {
             get {
                 return ResourceManager.GetString("HostComputerLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Import.
-        /// </summary>
-        public static string ImportButton {
-            get {
-                return ResourceManager.GetString("ImportButton", resourceCulture);
             }
         }
         
@@ -1318,15 +1300,6 @@ namespace DoubanFM.Resources {
         public static string RememberPasswordCheckBox {
             get {
                 return ResourceManager.GetString("RememberPasswordCheckBox", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reset.
-        /// </summary>
-        public static string ResetButton {
-            get {
-                return ResourceManager.GetString("ResetButton", resourceCulture);
             }
         }
         

@@ -250,15 +250,6 @@
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>Lyrics Settings</value>
   </data>
-  <data name="ImportButton" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="ExportButton" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="ResetButton" xml:space="preserve">
-    <value>Reset</value>
-  </data>
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>A third-party client</value>
   </data>

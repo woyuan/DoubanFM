@@ -430,11 +430,6 @@ Website : http://www.kfstorm.com
 								<Button Grid.Row="2" x:Name="ButtonUISetting" Content="{x:Static resx:Resources.InterfaceSettingsButton}" Click="ButtonUISetting_Click"/>
 								<Button Grid.Row="4" x:Name="ButtonLyricsSetting" Content="{x:Static resx:Resources.LyricsSettingsButton}" Click="LyricsSetting_Click" />
 							</Grid>
-							<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-								<Button x:Name="BtnImportSettings" Content="{x:Static resx:Resources.ImportButton}" MinWidth="50" Click="BtnImportSettings_Click" Margin="0,0,10,0"/>
-								<Button x:Name="BtnExportSettings" Content="{x:Static resx:Resources.ExportButton}" MinWidth="50" Click="BtnExportSettings_Click" Margin="0,0,10,0"/>
-								<Button x:Name="BtnResetSettings" Content="{x:Static resx:Resources.ResetButton}" MinWidth="50" Click="BtnResetSettings_Click"/>
-							</StackPanel>
 						</Grid>
 					</TabItem>
 					<TabItem Header="{StaticResource TabItemInfo}">
