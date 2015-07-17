@@ -342,7 +342,6 @@ namespace DoubanFM
 			if (player != null) player.SaveSettings();
 			if (mainWindow._lyricsSetting != null) mainWindow._lyricsSetting.Save();
 			if (mainWindow.ShareSetting != null) mainWindow.ShareSetting.Save();
-			if (mainWindow.HotKeys != null) mainWindow.HotKeys.Save();
 		}
 
 		/// <summary>

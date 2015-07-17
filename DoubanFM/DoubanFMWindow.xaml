@@ -488,14 +488,11 @@ Website : http://www.kfstorm.com
 									<RowDefinition/>
 									<RowDefinition Height="10"/>
 									<RowDefinition/>
-									<RowDefinition Height="10"/>
-									<RowDefinition/>
 								</Grid.RowDefinitions>
 								<Button x:Name="ButtonGeneralSetting" Content="{x:Static resx:Resources.GeneralSettingsButton}" Click="ButtonGeneralSetting_Click"/>
 								<Button Grid.Row="2" x:Name="ButtonUISetting" Content="{x:Static resx:Resources.InterfaceSettingsButton}" Click="ButtonUISetting_Click"/>
 								<Button Grid.Row="4" x:Name="ButtonLyricsSetting" Content="{x:Static resx:Resources.LyricsSettingsButton}" Click="LyricsSetting_Click" />
-								<Button Grid.Row="6" x:Name="ButtonHotKeySettings" Click="ButtonHotKeySettings_Click" Content="{x:Static resx:Resources.HotKeySettingsButton}"/>
-								<Button Grid.Row="8" x:Name="ButtonShareSetting" Content="{x:Static resx:Resources.ShareSettingsButton}" Click="ButtonShareSetting_Click"/>
+								<Button Grid.Row="6" x:Name="ButtonShareSetting" Content="{x:Static resx:Resources.ShareSettingsButton}" Click="ButtonShareSetting_Click"/>
 							</Grid>
 							<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 								<Button x:Name="BtnImportSettings" Content="{x:Static resx:Resources.ImportButton}" MinWidth="50" Click="BtnImportSettings_Click" Margin="0,0,10,0"/>

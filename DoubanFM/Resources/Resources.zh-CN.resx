@@ -283,9 +283,6 @@
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>歌词设置</value>
   </data>
-  <data name="HotKeySettingsButton" xml:space="preserve">
-    <value>热键设置</value>
-  </data>
   <data name="ShareSettingsButton" xml:space="preserve">
     <value>分享设置</value>
   </data>
@@ -481,45 +478,6 @@
   </data>
   <data name="HelpWindowParagraphDisclaimer6" xml:space="preserve">
     <value>豆瓣FM使用帮助和支持：</value>
-  </data>
-  <data name="HotKeySettingWindowLikeHotkeyTextBlock" xml:space="preserve">
-    <value>喜欢（不取消）</value>
-  </data>
-  <data name="HotKeySettingWindowDontPlayHotkeyTextBlock" xml:space="preserve">
-    <value>不再播放</value>
-  </data>
-  <data name="HotKeySettingWindowPlayPauseHotkeyTextBlock" xml:space="preserve">
-    <value>播放/暂停</value>
-  </data>
-  <data name="HotKeySettingWindowNextHotkeyTextBlock" xml:space="preserve">
-    <value>下一首</value>
-  </data>
-  <data name="HotKeySettingWindowMediaKeyInfoTextBlock" xml:space="preserve">
-    <value>多媒体键“播放/暂停”和“下一首”已自动设置</value>
-  </data>
-  <data name="HotKeySettingWindowShowMinimizeTextBlock" xml:space="preserve">
-    <value>显示/最小化</value>
-  </data>
-  <data name="HotKeySettingWindowShowHideTextBlock" xml:space="preserve">
-    <value>显示/隐藏窗口</value>
-  </data>
-  <data name="HotKeySettingWindowShowHideLyricsTextBlock" xml:space="preserve">
-    <value>显示/隐藏歌词</value>
-  </data>
-  <data name="HotKeySettingWindowShareKeyTextBlock" xml:space="preserve">
-    <value>一键分享</value>
-  </data>
-  <data name="HotKeySettingWindowSearchDownloadTextBlock" xml:space="preserve">
-    <value>搜索下载</value>
-  </data>
-  <data name="HotKeySettingWindowVolumeIncreaseTextBlock" xml:space="preserve">
-    <value>音量增大</value>
-  </data>
-  <data name="HotKeySettingWindowVolumeDecreaseTextBlock" xml:space="preserve">
-    <value>音量减小</value>
-  </data>
-  <data name="HotKeySettingWindowMuteSwitchTextBlock" xml:space="preserve">
-    <value>静音切换</value>
   </data>
   <data name="CbShowLyrics" xml:space="preserve">
     <value>显示歌词</value>

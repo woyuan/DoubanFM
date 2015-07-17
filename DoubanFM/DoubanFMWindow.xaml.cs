@@ -77,12 +77,7 @@ namespace DoubanFM
 		/// </summary>
 		public enum Commands { None, Like, Unlike, LikeUnlike, Never, PlayPause, Next, ShowMinimize, ShowHide, ShowLyrics, HideLyrics, ShowHideLyrics, OneKeyShare, SearchDownload, VolumeUp, VolumeDown, MuteSwitch }
 
-		/// <summary>
-		/// 热键
-		/// </summary>
-		public HotKeys HotKeys;
-
-		/// <summary>
+	    /// <summary>
 		/// 临时文件夹
 		/// </summary>
 		private string _tempPath = Path.Combine(Path.GetTempPath(), "DoubanFM");
@@ -1109,93 +1104,7 @@ namespace DoubanFM
 				_lyricsWindow.Lyrics = lyrics;
 		}
 
-		/// <summary>
-		/// 给热键添加逻辑
-		/// </summary>
-		private void AddLogicToHotKeys(HotKeys hotKeys)
-		{
-			foreach (var keyValue in hotKeys)
-			{
-				HotKey hotKey = keyValue.Value;
-				switch (keyValue.Key)
-				{
-					case Commands.None:
-						break;
-
-					case Commands.Like:
-
-						hotKey.OnHotKey += delegate
-						{
-							Like();
-							if (_player.CurrentSong != null && _player.IsLikedEnabled && _player.IsLiked)
-								NotifyIcon.ShowCustomBalloon(new PopupLiked(), System.Windows.Controls.Primitives.PopupAnimation.Fade, 1000);
-						};
-						break;
-
-					case Commands.Unlike:
-						hotKey.OnHotKey += delegate { Unlike(); };
-						break;
-
-					case Commands.LikeUnlike:
-						hotKey.OnHotKey += delegate { LikeUnlike(); };
-						break;
-
-					case Commands.Never:
-						hotKey.OnHotKey += delegate { Never(); };
-						break;
-
-					case Commands.PlayPause:
-						hotKey.OnHotKey += delegate { PlayPause(); };
-						break;
-
-					case Commands.Next:
-						hotKey.OnHotKey += delegate { Next(); };
-						break;
-
-					case Commands.ShowMinimize:
-						hotKey.OnHotKey += delegate { ShowMinimize(); };
-						break;
-
-					case Commands.ShowHide:
-						hotKey.OnHotKey += delegate { ShowHide(); };
-						break;
-
-					case Commands.ShowLyrics:
-						hotKey.OnHotKey += delegate { ShowLyrics(); };
-						break;
-
-					case Commands.HideLyrics:
-						hotKey.OnHotKey += delegate { HideLyrics(); };
-						break;
-
-					case Commands.ShowHideLyrics:
-						hotKey.OnHotKey += delegate { ShowHideLyrics(); };
-						break;
-
-					case Commands.OneKeyShare:
-						hotKey.OnHotKey += delegate { OneKeyShare(); };
-						break;
-
-					case Commands.SearchDownload:
-						hotKey.OnHotKey += delegate { SearchDownload(); };
-						break;
-
-					case Commands.VolumeUp:
-						hotKey.OnHotKey += delegate { VolumeUp(); };
-						break;
-
-					case Commands.VolumeDown:
-						hotKey.OnHotKey += delegate { VolumeDown(); };
-						break;
-
-					case Commands.MuteSwitch:
-						hotKey.OnHotKey += delegate { MuteSwitch(); };
-						break;
-				}
-			}
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 暂存正在下载的歌词所对应的歌曲
 		/// </summary>
 		private Song downloadingLyrics = null;
@@ -1678,10 +1587,6 @@ namespace DoubanFM
 			BassEngine.Instance.Stop();
 			//if (Audio != null)
 			//    Audio.Close();
-			if (HotKeys != null)
-			{
-				HotKeys.UnRegister();
-			}
             if (appCommand != null)
             {
                 appCommand.Dispose();
@@ -1979,24 +1884,6 @@ namespace DoubanFM
 			InitProxy();
 			Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 初始化代理设置完成");
 
-			Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 加载热键设置");
-			//加载热键设置
-			HotKeys = HotKeys.Load();
-			HotKeys.RegisterError += new EventHandler<HotKeys.RegisterErrorEventArgs>((oo, ee) =>
-			{
-				System.Text.StringBuilder sb = new System.Text.StringBuilder();
-				foreach (var exception in ee.Exceptions)
-				{
-					sb.AppendLine(exception.Message);
-				}
-				MessageBox.Show(sb.ToString());
-			});
-
-			AddLogicToHotKeys(HotKeys);
-			HotKeys.Register(this);
-
-			Debug.WriteLine(App.GetPreciseTime(DateTime.Now) + " 加载热键设置完成");
-
 			//初始化窗口位置
 		    if (!double.IsNaN(_player.Settings.LocationLeft))
 		    {
@@ -2074,24 +1961,7 @@ namespace DoubanFM
 			window.Show();
 		}
 
-		private void ButtonHotKeySettings_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			// 在此处添加事件处理程序实现。
-			ButtonHotKeySettings.IsEnabled = false;
-			HotKeys.UnRegister();
-			HotKeySettingWindow hotKeyWindow = new HotKeySettingWindow(this, HotKeys);
-			hotKeyWindow.Closed += new EventHandler((o, ee) =>
-			{
-				ButtonHotKeySettings.IsEnabled = true;
-				_windowMouseLeaveTimer.Start();
-				HotKeys = hotKeyWindow.HotKeys;
-				AddLogicToHotKeys(HotKeys);
-				HotKeys.Register(this);
-			});
-			hotKeyWindow.Show();
-		}
-
-		private void ShareButton_Click(object sender, System.Windows.RoutedEventArgs e)
+	    private void ShareButton_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
 			// 在此处添加事件处理程序实现。
 			if (_player.CurrentSong != null)
@@ -2210,7 +2080,7 @@ namespace DoubanFM
 				{
 					SaveSettings();
 					string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"K.F.Storm\豆瓣电台");
-					FilePackage.CreatePackage(dialog.FileName, directory, "Settings.dat", "cookies.dat", "LyricsSetting.dat", "HotKeys.dat", "ShareSetting.dat");
+					FilePackage.CreatePackage(dialog.FileName, directory, "Settings.dat", "cookies.dat", "LyricsSetting.dat", "ShareSetting.dat");
 				}
 				catch (Exception ex)
 				{

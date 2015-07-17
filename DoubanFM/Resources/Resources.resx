@@ -286,9 +286,6 @@
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>Lyrics Settings</value>
   </data>
-  <data name="HotKeySettingsButton" xml:space="preserve">
-    <value>Hot Key Settings</value>
-  </data>
   <data name="ShareSettingsButton" xml:space="preserve">
     <value>Share Settings</value>
   </data>
@@ -484,45 +481,6 @@ Surprise!</value>
   </data>
   <data name="HelpWindowParagraphDisclaimer6" xml:space="preserve">
     <value>The DoubanFM Help and Support:</value>
-  </data>
-  <data name="HotKeySettingWindowLikeHotkeyTextBlock" xml:space="preserve">
-    <value>Like</value>
-  </data>
-  <data name="HotKeySettingWindowDontPlayHotkeyTextBlock" xml:space="preserve">
-    <value>Never play again</value>
-  </data>
-  <data name="HotKeySettingWindowPlayPauseHotkeyTextBlock" xml:space="preserve">
-    <value>Play/Pause</value>
-  </data>
-  <data name="HotKeySettingWindowNextHotkeyTextBlock" xml:space="preserve">
-    <value>Next track</value>
-  </data>
-  <data name="HotKeySettingWindowMediaKeyInfoTextBlock" xml:space="preserve">
-    <value>Multimedia keys 'Play/Pause' and 'Next' are set.</value>
-  </data>
-  <data name="HotKeySettingWindowShowMinimizeTextBlock" xml:space="preserve">
-    <value>Show/Minimize window</value>
-  </data>
-  <data name="HotKeySettingWindowShowHideTextBlock" xml:space="preserve">
-    <value>Show/Hide window</value>
-  </data>
-  <data name="HotKeySettingWindowShowHideLyricsTextBlock" xml:space="preserve">
-    <value>Show/Hide lyrics</value>
-  </data>
-  <data name="HotKeySettingWindowShareKeyTextBlock" xml:space="preserve">
-    <value>One-key share</value>
-  </data>
-  <data name="HotKeySettingWindowSearchDownloadTextBlock" xml:space="preserve">
-    <value>Search download</value>
-  </data>
-  <data name="HotKeySettingWindowVolumeIncreaseTextBlock" xml:space="preserve">
-    <value>Volume up</value>
-  </data>
-  <data name="HotKeySettingWindowVolumeDecreaseTextBlock" xml:space="preserve">
-    <value>Volume down</value>
-  </data>
-  <data name="HotKeySettingWindowMuteSwitchTextBlock" xml:space="preserve">
-    <value>Mute/Unmute</value>
   </data>
   <data name="CbShowLyrics" xml:space="preserve">
     <value>Enable lyrics</value>

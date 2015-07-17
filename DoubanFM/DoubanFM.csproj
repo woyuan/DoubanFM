@@ -104,7 +104,6 @@
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HotKey\HotKey.cs" />
     <Compile Include="NotifyIcon\PopupControlPanel.xaml.cs">
       <DependentUpon>PopupControlPanel.xaml</DependentUpon>
     </Compile>
@@ -119,11 +118,6 @@
     </Compile>
     <Compile Include="GeneralSettingWindow.xaml.cs">
       <DependentUpon>GeneralSettingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="HotKey\HotKeys.cs" />
-    <Compile Include="HotKey\HotKeySettingControl.cs" />
-    <Compile Include="HotKeySettingWindow.xaml.cs">
-      <DependentUpon>HotKeySettingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="LyricsSetting.cs" />
     <Compile Include="LyricsSettingWindow.xaml.cs">
@@ -192,10 +186,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="GeneralSettingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HotKeySettingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
