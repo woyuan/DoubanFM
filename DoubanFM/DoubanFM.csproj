@@ -97,9 +97,6 @@
       <DependentUpon>Resources.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="Wmi\DisplayConfiguration.cs" />
-    <Compile Include="ExceptionWindow.xaml.cs">
-      <DependentUpon>ExceptionWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UISettingWindow.xaml.cs">
       <DependentUpon>UISettingWindow.xaml</DependentUpon>
     </Compile>
@@ -126,10 +123,6 @@
     <Compile Include="Wmi\SoundDevice.cs" />
     <Compile Include="Wmi\WmiBase.cs" />
     <Compile Include="Screen.cs" />
-    <Page Include="ExceptionWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -89,64 +89,6 @@ namespace DoubanFM
 			Debug.WriteLine("**********************************************************************");
 			Debug.WriteLine(string.Empty);
 
-			//出现未处理的异常时，弹出错误报告窗口，让用户发送错误报告
-			AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler((sender, e) =>
-			{
-				if (mutex != null)
-				{
-					mutex.Close();
-					mutex = null;
-				}
-				if (exceptionObject == null)
-				{
-					exceptionObject = e.ExceptionObject;
-					Debug.WriteLine("**********************************************************************");
-					Debug.WriteLine("豆瓣电台出现错误：" + App.GetPreciseTime(DateTime.Now));
-					Debug.WriteLine("**********************************************************************");
-                    Debug.WriteLine(e.ExceptionObject.ToString());
-
-					try
-					{
-						StringBuilder sb = new StringBuilder();
-						sb.AppendLine(DateTime.Now.ToString());
-						sb.AppendLine(ExceptionWindow.GetSystemInformation());
-						sb.AppendLine(ExceptionWindow.GetExceptionMessage(exceptionObject));
-
-						string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"K.F.Storm\豆瓣电台\error.log");
-						string directory = Path.GetDirectoryName(path);
-						if (!Directory.Exists(directory))
-						{
-							Directory.CreateDirectory(directory);
-						}
-						File.WriteAllText(path, sb.ToString());
-
-						DeleteSettingsIfEmergant();
-					}
-					catch { }
-
-					Dispatcher.Invoke(new Action(() =>
-					{
-						try
-						{
-							SaveSettings();
-							var window = new ExceptionWindow();
-							window.ExceptionObject = exceptionObject;
-							window.ShowDialog();
-							Process.GetCurrentProcess().Kill();
-						}
-						catch
-						{
-							SendReport();
-						}
-					}));
-				}
-				else
-				{
-					DeleteSettingsIfEmergant();
-					SendReport();
-				}
-			});
-
 			Exit += new ExitEventHandler((sender, e) =>
 			{
 				if (mutex != null)
@@ -249,84 +191,12 @@ namespace DoubanFM
 			}
 		}
 
-		private void SendReport()
-		{
-			if (exceptionObject != null)
-			{
-				lock (exceptionObject)
-				{
-					try
-					{
-						string exceptionMessage = ExceptionWindow.GetExceptionMessage(exceptionObject);
-						string userMessage = string.Empty;
-						string systemInformation = ExceptionWindow.GetSystemInformation();
-#if DEBUG || TEST
-						Debug.WriteLine(systemInformation);
-						Debug.WriteLine(exceptionMessage);
-#else
-						ExceptionWindow.SendReport(exceptionMessage, userMessage, systemInformation);
-#endif
-					}
-					catch { }
-					Process.GetCurrentProcess().Kill();
-				}
-			}
-		}
-
-		/// <summary>
-		/// 删除所有设置
-		/// </summary>
-		public static void DeleteSettings(bool useLock = true)
-		{
-			if (useLock && exceptionObject != null)
-			{
-#if !DEBUG
-				lock (exceptionObject)
-				{
-					DeleteSettings(false);
-				}
-#endif
-			}
-			else
-			{
-				try
-				{
-					var dataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"K.F.Storm\豆瓣电台");
-					if (!Directory.Exists(dataFolder)) return;
-					var files = Directory.GetFiles(dataFolder, "*.dat");
-					foreach (var file in files)
-					{
-						File.Delete(file);
-					}
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine((ex.ToString()));
-				}
-			}
-		}
-
-		private static bool _neverSaveSettings = false;
-
-		/// <summary>
-		/// 如果软件无法正常启动，则删除设置
-		/// </summary>
-		public static void DeleteSettingsIfEmergant()
-		{
-#if !DEBUG
-			if (Started && DateTime.Now - StartTime >= TimeSpan.FromSeconds(5)) return;
-			NeverSaveSettings();
-			DeleteSettings();
-#endif
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 保存设置
 		/// </summary>
 		/// <param name="mainWindow">软件的主窗口</param>
 		public void SaveSettings(DoubanFMWindow mainWindow = null)
 		{
-			if (_neverSaveSettings) return;
 			if (mainWindow == null)
 			{
 				mainWindow = MainWindow as DoubanFMWindow;
@@ -338,14 +208,6 @@ namespace DoubanFM
 			if (mainWindow._lyricsSetting != null) mainWindow._lyricsSetting.Save();
 		}
 
-		/// <summary>
-		/// 本次运行不再保存设置
-		/// </summary>
-		public static void NeverSaveSettings()
-		{
-			_neverSaveSettings = true;
-		}
-
-		public static Version AppVersion { get; private set; }
+	    public static Version AppVersion { get; private set; }
 	}
 }
