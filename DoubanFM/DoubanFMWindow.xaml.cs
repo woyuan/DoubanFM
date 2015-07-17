@@ -74,7 +74,7 @@ namespace DoubanFM
 		/// <summary>
 		/// 命令
 		/// </summary>
-		public enum Commands { None, Like, Unlike, LikeUnlike, Never, PlayPause, Next, ShowMinimize, ShowHide, ShowLyrics, HideLyrics, ShowHideLyrics, SearchDownload, VolumeUp, VolumeDown, MuteSwitch }
+		public enum Commands { None, Like, Unlike, LikeUnlike, Never, PlayPause, Next, ShowMinimize, ShowHide, ShowLyrics, HideLyrics, ShowHideLyrics, VolumeUp, VolumeDown, MuteSwitch }
 
 	    /// <summary>
 		/// 临时文件夹
@@ -1091,7 +1091,6 @@ namespace DoubanFM
 			PersonalChannels.SelectedItem = PersonalChannels.Items.OfType<Channel>().FirstOrDefault(x => x == _player.CurrentChannel);
 			PublicChannels.SelectedItem = PublicChannels.Items.OfType<Channel>().FirstOrDefault(x => x == _player.CurrentChannel);
 			DjChannels.SelectedItem = DjChannels.Items.OfType<Channel>().FirstOrDefault(x => x == _player.CurrentChannel);
-			SearchResultList.SelectedItem = SearchResultList.Items.OfType<ChannelSearchItem>().FirstOrDefault(x => x.GetChannel() == _player.CurrentChannel);
 			Channel PersonalNew = PersonalChannels.SelectedItem as Channel;
 			Channel PublicNew = PublicChannels.SelectedItem as Channel;
 			Channel DjNew = DjChannels.SelectedItem as Channel;
@@ -1645,29 +1644,7 @@ namespace DoubanFM
 			Core.UrlHelper.OpenLink("http://douban.fm/");
 		}
 
-		private void Search_Click(object sender, RoutedEventArgs e)
-		{
-			_player.ChannelSearch.StartSearch(SearchText.Text);
-		}
-
-		private void PreviousPage_Click(object sender, RoutedEventArgs e)
-		{
-			_player.ChannelSearch.PreviousPage();
-		}
-
-		private void NextPage_Click(object sender, RoutedEventArgs e)
-		{
-			_player.ChannelSearch.NextPage();
-		}
-
-		private void SearchResultList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-		{
-			if (SearchResultList.SelectedItem == null) return;
-			Channel channel = ((ChannelSearchItem)SearchResultList.SelectedItem).GetChannel();
-			if (channel != null) _player.CurrentChannel = channel;
-		}
-
-		/*private void Window_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+	    /*private void Window_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
 		{
 			switch (e.Key)
 			{

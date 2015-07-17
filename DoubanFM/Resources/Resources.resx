@@ -163,15 +163,6 @@
   <data name="PleaseWaitLabel" xml:space="preserve">
     <value>Please Wait</value>
   </data>
-  <data name="SearchingLabel" xml:space="preserve">
-    <value>Searching...</value>
-  </data>
-  <data name="ConsistentResultsLabel" xml:space="preserve">
-    <value>Search results from music.douban.com</value>
-  </data>
-  <data name="SearchResultsCanNotListenLabel" xml:space="preserve">
-    <value>"Remove search results that can not be played" is checked.</value>
-  </data>
   <data name="MayNextResultsLabel" xml:space="preserve">
     <value>Check out the next page</value>
   </data>
@@ -225,9 +216,6 @@
   </data>
   <data name="InfoTab" xml:space="preserve">
     <value>Information</value>
-  </data>
-  <data name="SearchTab" xml:space="preserve">
-    <value>Search</value>
   </data>
   <data name="AccountTab" xml:space="preserve">
     <value>Account</value>
@@ -305,14 +293,8 @@ Surprise!</value>
   <data name="CheckBoxRememberLastChannel" xml:space="preserve">
     <value>Remember channel played last</value>
   </data>
-  <data name="CheckBoxIsSearchFilterEnabled" xml:space="preserve">
-    <value>Remove search results that can not be played</value>
-  </data>
   <data name="OutputDevicesTextBlock" xml:space="preserve">
     <value>Output device</value>
-  </data>
-  <data name="AlbumSearchCheckBox" xml:space="preserve">
-    <value>Include album title</value>
   </data>
   <data name="TrimBracketsCheckBox" xml:space="preserve">
     <value>Auto remove brackets and their contents</value>

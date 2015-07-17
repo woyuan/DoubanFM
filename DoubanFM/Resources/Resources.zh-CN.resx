@@ -163,15 +163,6 @@
   <data name="PleaseWaitLabel" xml:space="preserve">
     <value>请稍候</value>
   </data>
-  <data name="SearchingLabel" xml:space="preserve">
-    <value>正在搜索 ...</value>
-  </data>
-  <data name="ConsistentResultsLabel" xml:space="preserve">
-    <value>搜索结果来自 music.douban.com</value>
-  </data>
-  <data name="SearchResultsCanNotListenLabel" xml:space="preserve">
-    <value>您开启了自动剔除无法收听的项目</value>
-  </data>
   <data name="MayNextResultsLabel" xml:space="preserve">
     <value>可能下一页就会有结果哦</value>
   </data>
@@ -225,9 +216,6 @@
   </data>
   <data name="InfoTab" xml:space="preserve">
     <value>信息</value>
-  </data>
-  <data name="SearchTab" xml:space="preserve">
-    <value>搜索</value>
   </data>
   <data name="ChannelsTab" xml:space="preserve">
     <value>频道列表</value>
@@ -302,14 +290,8 @@
   <data name="CheckBoxRememberLastChannel" xml:space="preserve">
     <value>记住上次播放的频道</value>
   </data>
-  <data name="CheckBoxIsSearchFilterEnabled" xml:space="preserve">
-    <value>在搜索结果中剔除无法收听的项目</value>
-  </data>
   <data name="OutputDevicesTextBlock" xml:space="preserve">
     <value>输出设备</value>
-  </data>
-  <data name="AlbumSearchCheckBox" xml:space="preserve">
-    <value>搜索下载时包括专辑信息</value>
   </data>
   <data name="TrimBracketsCheckBox" xml:space="preserve">
     <value>搜索下载时自动剔除歌曲信息中的括号内容</value>

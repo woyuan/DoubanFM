@@ -79,15 +79,6 @@ namespace DoubanFM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Include album title.
-        /// </summary>
-        public static string AlbumSearchCheckBox {
-            get {
-                return ResourceManager.GetString("AlbumSearchCheckBox", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Application will be shut down.
         /// </summary>
         public static string ApplicationWillClose {
@@ -241,15 +232,6 @@ namespace DoubanFM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove search results that can not be played.
-        /// </summary>
-        public static string CheckBoxIsSearchFilterEnabled {
-            get {
-                return ResourceManager.GetString("CheckBoxIsSearchFilterEnabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Open album info when cover is clicked.
         /// </summary>
         public static string CheckBoxOpenAlbumInfoWhenClickCover {
@@ -300,15 +282,6 @@ namespace DoubanFM.Resources {
         public static string CloseButton {
             get {
                 return ResourceManager.GetString("CloseButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search results from music.douban.com.
-        /// </summary>
-        public static string ConsistentResultsLabel {
-            get {
-                return ResourceManager.GetString("ConsistentResultsLabel", resourceCulture);
             }
         }
         
@@ -1400,33 +1373,6 @@ namespace DoubanFM.Resources {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Searching....
-        /// </summary>
-        public static string SearchingLabel {
-            get {
-                return ResourceManager.GetString("SearchingLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;Remove search results that can not be played&quot; is checked..
-        /// </summary>
-        public static string SearchResultsCanNotListenLabel {
-            get {
-                return ResourceManager.GetString("SearchResultsCanNotListenLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search.
-        /// </summary>
-        public static string SearchTab {
-            get {
-                return ResourceManager.GetString("SearchTab", resourceCulture);
             }
         }
         

@@ -171,10 +171,6 @@ namespace DoubanFM.Core
 		/// 处理登录、注销等
 		/// </summary>
 		public UserAssistant UserAssistant { get; private set; }
-		/// <summary>
-		/// 频道搜索
-		/// </summary>
-		public ChannelSearch ChannelSearch { get; private set; }
 		
 		#endregion
 
@@ -350,7 +346,6 @@ namespace DoubanFM.Core
 			LoadSettings();
 			UserAssistant = new UserAssistant();
 			UserAssistant.Settings = Settings;
-			ChannelSearch = new ChannelSearch(Settings);
 
             //加红心功能始终启用
 		    IsLikedEnabled = true;

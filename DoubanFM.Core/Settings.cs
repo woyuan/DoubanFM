@@ -38,7 +38,6 @@ namespace DoubanFM.Core
 		public static readonly DependencyProperty AutoUpdateProperty = DependencyProperty.Register("AutoUpdate", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty LastTimeCheckUpdateProperty = DependencyProperty.Register("LastTimeCheckUpdate", typeof(DateTime), typeof(Settings), new PropertyMetadata(DateTime.MinValue));
 		public static readonly DependencyProperty OpenAlbumInfoWhenClickCoverProperty = DependencyProperty.Register("OpenAlbumInfoWhenClickCover", typeof(bool), typeof(Settings), new PropertyMetadata(false));
-		public static readonly DependencyProperty IsSearchFilterEnabledProperty = DependencyProperty.Register("IsSearchFilterEnabled", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty ShowLyricsProperty = DependencyProperty.Register("ShowLyrics", typeof(bool), typeof(Settings), new PropertyMetadata(true));
 		public static readonly DependencyProperty TopMostProperty = DependencyProperty.Register("TopMost", typeof(bool), typeof(Settings));
 		public static readonly DependencyProperty ScaleTransformProperty = DependencyProperty.Register("ScaleTransform", typeof(double), typeof(Settings), new PropertyMetadata(1.0));
@@ -53,7 +52,6 @@ namespace DoubanFM.Core
 		public static readonly DependencyProperty MainWindowFontProperty = DependencyProperty.Register("MainWindowFont", typeof(FontFamily), typeof(Settings), new PropertyMetadata(System.Windows.SystemFonts.MessageFontFamily));
 		public static readonly DependencyProperty BackgroundTransparencyProperty = DependencyProperty.Register("BackgroundTransparency", typeof(double), typeof(Settings));
 		public static readonly DependencyProperty TrimBracketsProperty = DependencyProperty.Register("TrimBrackets", typeof(bool), typeof(Settings), new PropertyMetadata(true));
-		public static readonly DependencyProperty SearchAlbumProperty = DependencyProperty.Register("SearchAlbum", typeof(bool), typeof(Settings), new PropertyMetadata(false));
 		public static readonly DependencyProperty LocationLeftProperty = DependencyProperty.Register("LocationLeft", typeof(double), typeof(Settings), new PropertyMetadata(double.NaN));
 		public static readonly DependencyProperty LocationTopProperty = DependencyProperty.Register("LocationTop", typeof(double), typeof(Settings), new PropertyMetadata(double.NaN));
 		public static readonly DependencyProperty SpectrumColorProperty = DependencyProperty.Register("SpectrumColor", typeof(Color), typeof(Settings), new PropertyMetadata(Colors.White));
@@ -180,14 +178,6 @@ namespace DoubanFM.Core
 			set { SetValue(OpenAlbumInfoWhenClickCoverProperty, value); }
 		}
 		/// <summary>
-		/// 自动剔除搜索结果中无法收听的项目
-		/// </summary>
-		public bool IsSearchFilterEnabled
-		{
-			get { return (bool)GetValue(IsSearchFilterEnabledProperty); }
-			set { SetValue(IsSearchFilterEnabledProperty, value); }
-		}
-		/// <summary>
 		/// 是否显示歌词
 		/// </summary>
 		public bool ShowLyrics
@@ -298,14 +288,6 @@ namespace DoubanFM.Core
 		{
 			get { return (bool)GetValue(TrimBracketsProperty); }
 			set { SetValue(TrimBracketsProperty, value); }
-		}
-		/// <summary>
-		/// 搜索下载时包括专辑信息
-		/// </summary>
-		public bool SearchAlbum
-		{
-			get { return (bool)GetValue(SearchAlbumProperty); }
-			set { SetValue(SearchAlbumProperty, value); }
 		}
 
 		/// <summary>
@@ -453,8 +435,6 @@ namespace DoubanFM.Core
 			catch { }
 			try { OpenAlbumInfoWhenClickCover = info.GetBoolean("OpenAlbumInfoWhenClickCover"); }
 			catch { }
-			try { IsSearchFilterEnabled = info.GetBoolean("IsSearchFilterEnabled"); }
-			catch { }
 			try { ShowLyrics = info.GetBoolean("ShowLyrics"); }
 			catch { }
 			try { TopMost = info.GetBoolean("TopMost"); }
@@ -492,8 +472,6 @@ namespace DoubanFM.Core
 			try { BackgroundTransparency = info.GetDouble("BackgroundTransparency"); }
 			catch { }
 			try { TrimBrackets = info.GetBoolean("TrimBrackets"); }
-			catch { }
-			try { SearchAlbum = info.GetBoolean("SearchAlbum"); }
 			catch { }
 			try { LocationLeft = info.GetDouble("LocationLeft"); }
 			catch { }
@@ -541,7 +519,6 @@ namespace DoubanFM.Core
 			info.AddValue("AutoUpdate", AutoUpdate);
 			info.AddValue("LastTimeCheckUpdate", LastTimeCheckUpdate);
 			info.AddValue("OpenAlbumInfoWhenClickCover", OpenAlbumInfoWhenClickCover);
-			info.AddValue("IsSearchFilterEnabled", IsSearchFilterEnabled);
 			info.AddValue("ShowLyrics", ShowLyrics);
 			info.AddValue("TopMost", TopMost);
 			info.AddValue("ScaleTransform", ScaleTransform);
@@ -562,7 +539,6 @@ namespace DoubanFM.Core
 			}
 			info.AddValue("BackgroundTransparency", BackgroundTransparency);
 			info.AddValue("TrimBrackets", TrimBrackets);
-			info.AddValue("SearchAlbum", SearchAlbum);
 			info.AddValue("LocationLeft", LocationLeft);
 			info.AddValue("LocationTop", LocationTop);
 			if (SpectrumColor != null)

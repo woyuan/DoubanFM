@@ -343,13 +343,9 @@ namespace DoubanFM
 			Core.Channel channel = value as Core.Channel;
 			if (channel == null)
 			{
-				channel = (value as Core.ChannelSearchItem).GetChannel();
-			}
-			if (channel == null)
-			{
 				return Visibility.Collapsed;
 			}
-			bool canFavorite = canFavorite = !channel.IsPersonal || channel.IsSpecial;
+			bool canFavorite = !channel.IsPersonal || channel.IsSpecial;
 			return canFavorite ? Visibility.Visible : Visibility.Collapsed;
 		}
 

@@ -20,14 +20,7 @@ namespace DoubanFM
 {
 	public partial class Style : ResourceDictionary
 	{
-
-		private void Link_Click(object sender, RoutedEventArgs e)
-		{
-			// 在此处添加事件处理程序实现。
-			Core.UrlHelper.OpenLink((string)((Button)sender).Tag);
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 使控制面板切换时有渐变效果
 		/// </summary>
 		private void ControlPanelStyle_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,10 +45,6 @@ namespace DoubanFM
 		{
 			if (sender == null) return null;
 			var dataContext = ((FrameworkElement)sender).DataContext;
-			if (dataContext is ChannelSearchItem)
-			{
-				return (dataContext as ChannelSearchItem).GetChannel();
-			}
 			return dataContext as Channel;
 		}
 

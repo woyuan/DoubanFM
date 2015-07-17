@@ -63,12 +63,10 @@
     <Compile Include="Lyrics\TTPlayerLyrics.cs" />
     <Compile Include="Lyrics\LyricsItem.cs" />
     <Compile Include="Lyrics\LyricsResult.cs" />
-    <Compile Include="ChannelSearch\ChannelSearch.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Player\PlayList.cs" />
     <Compile Include="Player\ProRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ChannelSearch\ChannelSearchItem.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -100,6 +98,9 @@
       <Project>{62324cfd-03ff-44b4-9204-66bae86972b6}</Project>
       <Name>DoubanFM.Bass</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChannelSearch\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

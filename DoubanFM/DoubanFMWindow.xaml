@@ -314,42 +314,6 @@ Website : http://www.kfstorm.com
 							</Grid>
 						</Grid>
 					</TabItem>
-					<TabItem Header="{StaticResource TabItemSearch}">
-						<Grid>
-							<Grid Visibility="{Binding IsInitialized, Source={StaticResource Player}, Converter={StaticResource BooleanToVisibilityConverter}}">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto"/>
-									<RowDefinition/>
-									<RowDefinition Height="40"/>
-								</Grid.RowDefinitions>
-								<Grid Margin="10" Height="30">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition/>
-										<ColumnDefinition Width="Auto"/>
-									</Grid.ColumnDefinitions>
-									<TextBox x:Name="SearchText" IsEnabled="{Binding Source={StaticResource Player}, Path=ChannelSearch.IsSearchFinished}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-									<Button x:Name="Search" Grid.Column="1" Margin="10,0,0,0" Click="Search_Click" IsDefault="True" IsEnabled="{Binding Source={StaticResource Player}, Path=ChannelSearch.IsSearchFinished}" Style="{StaticResource SearchStyle}"/>
-								</Grid>
-								<ListBox x:Name="SearchResultList" Grid.Row="1" Style="{StaticResource SearchResultListStyle}" SelectionChanged="SearchResultList_SelectionChanged" ItemsSource="{Binding Source={StaticResource Player}, Path=ChannelSearch.SearchResult}" />
-                                <Label Grid.Row="1" Visibility="{Binding Converter={StaticResource BoolReverseToVisibilityConverter}, Source={StaticResource Player}, Path=ChannelSearch.IsSearchFinished}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static resx:Resources.SearchingLabel}"/>
-                                <StackPanel Grid.Row="1" Visibility="{Binding Path=ChannelSearch.ShowNoResultHint, Source={StaticResource Player}, Converter={StaticResource BooleanToVisibilityConverter}}" Height="Auto" VerticalAlignment="Center">
-                                    <TextBlock HorizontalAlignment="Center" Text="{x:Static resx:Resources.ConsistentResultsLabel}" TextAlignment="Center" TextWrapping="Wrap"/>
-                                    <StackPanel Visibility="{Binding Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource Player}, Path=Settings.IsSearchFilterEnabled}">
-                                        <TextBlock HorizontalAlignment="Center" Text="{x:Static resx:Resources.SearchResultsCanNotListenLabel}" TextAlignment="Center" TextWrapping="Wrap"/>
-                                        <TextBlock HorizontalAlignment="Center" Text="{x:Static resx:Resources.MayNextResultsLabel}" TextWrapping="Wrap"/>
-									</StackPanel>
-								</StackPanel>
-								<StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Height="30">
-									<Button x:Name="PreviousPage" Click="PreviousPage_Click" IsEnabled="{Binding Path=ChannelSearch.IsPreviousPageEnabled, Source={StaticResource Player}}" Style="{StaticResource PreviousPageStyle}"/>
-									<Border Width="20"/>
-									<Button x:Name="NextPage" Click="NextPage_Click" IsEnabled="{Binding Path=ChannelSearch.IsNextPageEnabled, Source={StaticResource Player}}" Style="{StaticResource NextPageStyle}"/>
-								</StackPanel>
-							</Grid>
-							<Grid Visibility="{Binding IsInitialized, Source={StaticResource Player}, Converter={StaticResource BoolReverseToVisibilityConverter}}">
-								<Label FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static resx:Resources.PleaseWaitLabel}"/>
-							</Grid>
-						</Grid>
-					</TabItem>
 					<TabItem x:Name="Account" Header="{StaticResource TabItemAccount}">
 						<Grid>
                             <Grid x:Name="AccountPanel" Visibility="{Binding IsInitialized, Source={StaticResource Player}, Converter={StaticResource BooleanToVisibilityConverter}}">
