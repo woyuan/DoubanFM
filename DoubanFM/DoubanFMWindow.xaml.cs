@@ -74,7 +74,7 @@ namespace DoubanFM
 		/// <summary>
 		/// 命令
 		/// </summary>
-		public enum Commands { None, Like, Unlike, LikeUnlike, Never, PlayPause, Next, ShowMinimize, ShowHide, ShowLyrics, HideLyrics, ShowHideLyrics, OneKeyShare, SearchDownload, VolumeUp, VolumeDown, MuteSwitch }
+		public enum Commands { None, Like, Unlike, LikeUnlike, Never, PlayPause, Next, ShowMinimize, ShowHide, ShowLyrics, HideLyrics, ShowHideLyrics, SearchDownload, VolumeUp, VolumeDown, MuteSwitch }
 
 	    /// <summary>
 		/// 临时文件夹
@@ -90,18 +90,6 @@ namespace DoubanFM
 		/// 歌词设置
 		/// </summary>
 		internal LyricsSetting _lyricsSetting;
-
-		/// <summary>
-		/// 分享设置
-		/// </summary>
-		public ShareSetting ShareSetting
-		{
-			get { return (ShareSetting)GetValue(ShareSettingProperty); }
-			set { SetValue(ShareSettingProperty, value); }
-		}
-
-		public static readonly DependencyProperty ShareSettingProperty =
-			DependencyProperty.Register("ShareSetting", typeof(ShareSetting), typeof(DoubanFMWindow), new UIPropertyMetadata(null));
 
 		/// <summary>
 		/// 原始窗口背景
@@ -196,8 +184,7 @@ namespace DoubanFM
 			CheckMappedFile();
 			ReportUseAtStartup();
 			InitLyrics();
-			InitShareSetting();
-			InitBackground();
+		    InitBackground();
 			InitAppCommand();
 		}
 
@@ -740,16 +727,7 @@ namespace DoubanFM
 			//CurrentLyrics.SetBinding(TextBlock.OpacityProperty, binding2);
 		}
 
-		/// <summary>
-		/// 初始化分享设置
-		/// </summary>
-		private void InitShareSetting()
-		{
-			ShareSetting = ShareSetting.Load();
-			ApplyShareSetting();
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 启动时向服务器报告
 		/// </summary>
 		private void ReportUseAtStartup()
@@ -892,19 +870,7 @@ namespace DoubanFM
 				ShowLyrics();
 		}
 
-		/// <summary>
-		/// 一键分享
-		/// </summary>
-		public void OneKeyShare()
-		{
-			if (!ShareSetting.EnableOneKeyShare || _player.CurrentSong == null) return;
-			foreach (var site in ShareSetting.OneKeyShareSites)
-			{
-				new Share(_player, site).Go();
-			}
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 搜索下载
 		/// </summary>
 		public void SearchDownload()
@@ -1004,21 +970,7 @@ namespace DoubanFM
 			}
 		}
 
-		/// <summary>
-		/// 应用当前分享设置
-		/// </summary>
-		internal void ApplyShareSetting()
-		{
-			foreach (FrameworkElement button in Shares.Children)
-			{
-				if (ShareSetting.DisplayedSites.Contains((Share.Sites)button.Tag))
-					button.Visibility = Visibility.Visible;
-				else
-					button.Visibility = Visibility.Collapsed;
-			}
-		}
-
-		/// <summary>
+	    /// <summary>
 		/// 显示桌面歌词
 		/// </summary>
 		internal void ShowDesktopLyrics()
@@ -1832,41 +1784,12 @@ namespace DoubanFM
 			window.Show();
 		}
 
-		private void ButtonShareSetting_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			ButtonShareSetting.IsEnabled = false;
-			ShareSettingWindow window = new ShareSettingWindow(ShareSetting);
-			window.Closed += delegate { ButtonShareSetting.IsEnabled = true; _windowMouseLeaveTimer.Start(); };
-			window.Show();
-		}
-
-	    private void ShareButton_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			// 在此处添加事件处理程序实现。
-			if (_player.CurrentSong != null)
-				new Share(_player, (Share.Sites)((FrameworkElement)e.Source).Tag).Go();
-		}
-
-		private void GoToHomePage_Click(object sender, RoutedEventArgs e)
+	    private void GoToHomePage_Click(object sender, RoutedEventArgs e)
 		{
 			Core.UrlHelper.OpenLink("http://www.kfstorm.com/blog/doubanfm/");
 		}
 
-		private void BtnCopyUrl_Click(object sender, RoutedEventArgs e)
-		{
-			if (_player.CurrentSong != null)
-			{
-				new Share(_player).Go();
-                MessageBox.Show(this, DoubanFM.Resources.Resources.UrlCopyedToClipboard, DoubanFM.Resources.Resources.SuccessfullyCopied, MessageBoxButton.OK, MessageBoxImage.Information);
-			}
-		}
-
-		private void BtnOneKeyShare_Click(object sender, RoutedEventArgs e)
-		{
-			OneKeyShare();
-		}
-
-		private void BtnHelp_Click(object sender, RoutedEventArgs e)
+	    private void BtnHelp_Click(object sender, RoutedEventArgs e)
 		{
 			BtnHelp.IsEnabled = false;
 			HelpWindow window = new HelpWindow();
@@ -1951,7 +1874,7 @@ namespace DoubanFM
 				{
 					SaveSettings();
 					string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"K.F.Storm\豆瓣电台");
-					FilePackage.CreatePackage(dialog.FileName, directory, "Settings.dat", "cookies.dat", "LyricsSetting.dat", "ShareSetting.dat");
+					FilePackage.CreatePackage(dialog.FileName, directory, "Settings.dat", "cookies.dat", "LyricsSetting.dat");
 				}
 				catch (Exception ex)
 				{

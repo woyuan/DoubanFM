@@ -148,27 +148,6 @@
   <data name="UnfavoriteButton" xml:space="preserve">
     <value>取消收藏</value>
   </data>
-  <data name="ShareDouban" xml:space="preserve">
-    <value>分享到豆瓣</value>
-  </data>
-  <data name="ShareWeibo" xml:space="preserve">
-    <value>分享到新浪微博</value>
-  </data>
-  <data name="ShareMsn" xml:space="preserve">
-    <value>分享到 MSN</value>
-  </data>
-  <data name="ShareKaixin" xml:space="preserve">
-    <value>分享到开心网</value>
-  </data>
-  <data name="ShareRenren" xml:space="preserve">
-    <value>分享到人人网</value>
-  </data>
-  <data name="ShareFacebook" xml:space="preserve">
-    <value>分享到 Facebook</value>
-  </data>
-  <data name="ShareTwitter" xml:space="preserve">
-    <value>分享到 Twitter</value>
-  </data>
   <data name="PersonalRadioRB" xml:space="preserve">
     <value>我的电台</value>
   </data>
@@ -271,9 +250,6 @@
   <data name="Search" xml:space="preserve">
     <value>搜索</value>
   </data>
-  <data name="Share" xml:space="preserve">
-    <value>分享</value>
-  </data>
   <data name="GeneralSettingsButton" xml:space="preserve">
     <value>常规设置</value>
   </data>
@@ -282,9 +258,6 @@
   </data>
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>歌词设置</value>
-  </data>
-  <data name="ShareSettingsButton" xml:space="preserve">
-    <value>分享设置</value>
   </data>
   <data name="ImportButton" xml:space="preserve">
     <value>导入</value>
@@ -297,12 +270,6 @@
   </data>
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>第三方客户端</value>
-  </data>
-  <data name="CopyUrlButton" xml:space="preserve">
-    <value>分享（点击直接复制地址）</value>
-  </data>
-  <data name="ShareKeyButton" xml:space="preserve">
-    <value>一键分享</value>
   </data>
   <data name="DownloadSearchButton" xml:space="preserve">
     <value>搜索下载</value>
@@ -418,12 +385,6 @@
   </data>
   <data name="HelpWindowParagraphFontSet10" xml:space="preserve">
     <value>设置字体时可以用不同语言的字体名。所有的字体都有英文名字，而非英文字体一般都有非英文的名字。比如宋体的英文名是 SimSun，新宋体的英文名是 NSimSun，楷体的英文名是 KaiTi，微软雅黑的英文名是 Microsoft YaHei。台湾地区的 Win 7 中默认字体是微軟正黑體，英文名是 Microsoft JhengHei。本软件中选择字体时只把有简体中文名称的字体显示中文名，其他字体显示英文名，所以微软雅黑在下拉列表里叫微软雅黑，而微軟正黑體在下拉列表里叫 Microsoft JhengHei，还有比如標楷體的英文叫 DFKai-SB。</value>
-  </data>
-  <data name="HelpWindowParagraphShareParagraph1" xml:space="preserve">
-    <value>为什么点击分享到其他网站的链接后不能听到我分享的那首音乐？</value>
-  </data>
-  <data name="HelpWindowParagraphShareParagraph2" xml:space="preserve">
-    <value>这是因为豆瓣对网页做了手脚，会查看你是从哪个网站过来的，从某些网站（比如人人）进入豆瓣电台的网站会转到豆瓣电台的首页（也就是和直接在浏览器里输入 douban.fm 一样）。可以把分享的链接复制出来，粘贴到浏览器地址栏里打开，就可以听到分享的歌曲了。</value>
   </data>
   <data name="HelpWindowParagraphLogin1" xml:space="preserve">
     <value>为什么本来已经登录了，并且勾选了下次自动登录，结果下次打开软件时却没有自动登录？</value>
@@ -572,15 +533,6 @@
   <data name="LyricsWindowLyricsRoot1TB" xml:space="preserve">
     <value>占位用</value>
   </data>
-  <data name="ShareSettingsWindowShareButtonLabel" xml:space="preserve">
-    <value>显示分享按钮：</value>
-  </data>
-  <data name="ShareSettingsWindowEnableKeyShareCb" xml:space="preserve">
-    <value>启用一键分享</value>
-  </data>
-  <data name="ShareSettingsWindowKeyShareSiteLabel" xml:space="preserve">
-    <value>一键分享的网站：</value>
-  </data>
   <data name="CheckBoxTopMost" xml:space="preserve">
     <value>总在最前</value>
   </data>
@@ -671,44 +623,8 @@
   <data name="Default" xml:space="preserve">
     <value>默认</value>
   </data>
-  <data name="ShareText1" xml:space="preserve">
-    <value>我正在收听 《{0}》 - {1}</value>
-  </data>
   <data name="AccountTab" xml:space="preserve">
     <value>帐号信息</value>
-  </data>
-  <data name="ShareSiteDouban" xml:space="preserve">
-    <value>豆瓣</value>
-  </data>
-  <data name="ShareSiteFacebook" xml:space="preserve">
-    <value>Facebook</value>
-  </data>
-  <data name="ShareSiteFanfou" xml:space="preserve">
-    <value>饭否</value>
-  </data>
-  <data name="ShareSiteKaixin" xml:space="preserve">
-    <value>开心网</value>
-  </data>
-  <data name="ShareSiteMsn" xml:space="preserve">
-    <value>MSN</value>
-  </data>
-  <data name="ShareSiteRenren" xml:space="preserve">
-    <value>人人网</value>
-  </data>
-  <data name="ShareSiteTencentWeibo" xml:space="preserve">
-    <value>腾讯微博</value>
-  </data>
-  <data name="ShareSiteTwitter" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
-  <data name="ShareSiteWeibo" xml:space="preserve">
-    <value>新浪微博</value>
-  </data>
-  <data name="ShareSiteQzone" xml:space="preserve">
-    <value>QQ 空间</value>
-  </data>
-  <data name="ShareSiteNone" xml:space="preserve">
-    <value>*复制网址到剪贴板*</value>
   </data>
   <data name="AlbumInfoPage" xml:space="preserve">
     <value>资料</value>
@@ -734,15 +650,6 @@
   </data>
   <data name="SetProxyFailed" xml:space="preserve">
     <value>设置代理失败</value>
-  </data>
-  <data name="ShareFanfou" xml:space="preserve">
-    <value>分享到饭否</value>
-  </data>
-  <data name="ShareQzone" xml:space="preserve">
-    <value>分享到 QQ 空间</value>
-  </data>
-  <data name="ShareTencentWeibo" xml:space="preserve">
-    <value>分享到腾讯微博</value>
   </data>
   <data name="SuccessfullyCopied" xml:space="preserve">
     <value>复制成功</value>

@@ -192,14 +192,6 @@ Website : http://www.kfstorm.com
                         </InlineUIContainer>
                     </Paragraph>
                 </Section>
-                <Section>
-                    <Paragraph Style="{StaticResource Header1StyleKey}">
-                        <Run Text="{x:Static resx:Resources.HelpWindowParagraphShareParagraph1}"/>
-                    </Paragraph>
-                    <Paragraph Style="{StaticResource TextStyleKey}">
-                        <Run Text="{x:Static resx:Resources.HelpWindowParagraphShareParagraph2}"/>
-                    </Paragraph>
-                </Section>
                 <!--<Section>
                     <Paragraph Style="{StaticResource Header1StyleKey}">
                         <Run Text="{x:Static resx:Resources.HelpWindowParagraphLogin1}"/>

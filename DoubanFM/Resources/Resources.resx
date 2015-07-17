@@ -148,27 +148,6 @@
   <data name="UnfavoriteButton" xml:space="preserve">
     <value>Remove from favorites</value>
   </data>
-  <data name="ShareDouban" xml:space="preserve">
-    <value>Share on Douban</value>
-  </data>
-  <data name="ShareWeibo" xml:space="preserve">
-    <value>Share on Sina Weibo</value>
-  </data>
-  <data name="ShareMsn" xml:space="preserve">
-    <value>Share on MSN</value>
-  </data>
-  <data name="ShareKaixin" xml:space="preserve">
-    <value>Share on Kaixin</value>
-  </data>
-  <data name="ShareRenren" xml:space="preserve">
-    <value>Share on Renren</value>
-  </data>
-  <data name="ShareFacebook" xml:space="preserve">
-    <value>Share on Facebook</value>
-  </data>
-  <data name="ShareTwitter" xml:space="preserve">
-    <value>Share on Twitter</value>
-  </data>
   <data name="PersonalRadioRB" xml:space="preserve">
     <value>Personal</value>
   </data>
@@ -274,9 +253,6 @@
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="Share" xml:space="preserve">
-    <value>Search</value>
-  </data>
   <data name="GeneralSettingsButton" xml:space="preserve">
     <value>General Settings</value>
   </data>
@@ -285,9 +261,6 @@
   </data>
   <data name="LyricsSettingsButton" xml:space="preserve">
     <value>Lyrics Settings</value>
-  </data>
-  <data name="ShareSettingsButton" xml:space="preserve">
-    <value>Share Settings</value>
   </data>
   <data name="ImportButton" xml:space="preserve">
     <value>Import</value>
@@ -300,12 +273,6 @@
   </data>
   <data name="ThirdPartyClientsBlock" xml:space="preserve">
     <value>A third-party client</value>
-  </data>
-  <data name="CopyUrlButton" xml:space="preserve">
-    <value>Share (click to copy link)</value>
-  </data>
-  <data name="ShareKeyButton" xml:space="preserve">
-    <value>One-key share</value>
   </data>
   <data name="DownloadSearchButton" xml:space="preserve">
     <value>Search for music downloads</value>
@@ -421,12 +388,6 @@ Surprise!</value>
   </data>
   <data name="HelpWindowParagraphFontSet10" xml:space="preserve">
     <value>When you set the fonts, you can use the font name in multiple languages. All fonts have English names and non-English fonts, for the most of times, have non-English names. For example, 宋体 has a English name "SimSun", while 新宋体 has the English name "NSimsun". 楷体 has its English name as "KaiTi"; the English name of 微软雅黑 is Microsoft YaHei. In Taiwan, the default Windows 7 Chinese font is 微軟正黑體, whose English name is Microsoft Jhenghei. In this application, only fonts that have Simplified Chinese names are shown in Chinese, others are shown in English. Therefore, 微软雅黑 is still 微软雅黑 in the drop-down list, 微軟正黑體 is called Microsoft Jhenghei and DFKai-SB stands for 標楷體.</value>
-  </data>
-  <data name="HelpWindowParagraphShareParagraph1" xml:space="preserve">
-    <value>Why others can not listen to the music that I share by link?</value>
-  </data>
-  <data name="HelpWindowParagraphShareParagraph2" xml:space="preserve">
-    <value>Douban disallows some users to jump from certain websites. For example, when you click the link from RenRen.com, it would direct you to the front page of Douban.fm, which is effectively the same as visiting douban.fm in the broswer. You can copy the shared link and paste it into the address bar of the browser, then you can listen to the music.</value>
   </data>
   <data name="HelpWindowParagraphLogin1" xml:space="preserve">
     <value>I logged in and checked "Auto Log in". Why auto log in doesn't function when I open the application next time?</value>
@@ -575,15 +536,6 @@ Surprise!</value>
   <data name="LyricsWindowLyricsRoot1TB" xml:space="preserve">
     <value>Placeholder</value>
   </data>
-  <data name="ShareSettingsWindowShareButtonLabel" xml:space="preserve">
-    <value>Share buttons to show:</value>
-  </data>
-  <data name="ShareSettingsWindowEnableKeyShareCb" xml:space="preserve">
-    <value>Enable one-key share</value>
-  </data>
-  <data name="ShareSettingsWindowKeyShareSiteLabel" xml:space="preserve">
-    <value>Sites to share on when use one-key share:</value>
-  </data>
   <data name="CheckBoxTopMost" xml:space="preserve">
     <value>Always on top</value>
   </data>
@@ -674,42 +626,6 @@ Surprise!</value>
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="ShareText1" xml:space="preserve">
-    <value>I'm listening to {1} - {0}</value>
-  </data>
-  <data name="ShareSiteDouban" xml:space="preserve">
-    <value>Douban</value>
-  </data>
-  <data name="ShareSiteFacebook" xml:space="preserve">
-    <value>Facebook</value>
-  </data>
-  <data name="ShareSiteFanfou" xml:space="preserve">
-    <value>Fanfou</value>
-  </data>
-  <data name="ShareSiteKaixin" xml:space="preserve">
-    <value>Kaixin</value>
-  </data>
-  <data name="ShareSiteMsn" xml:space="preserve">
-    <value>MSN</value>
-  </data>
-  <data name="ShareSiteRenren" xml:space="preserve">
-    <value>Renren</value>
-  </data>
-  <data name="ShareSiteTencentWeibo" xml:space="preserve">
-    <value>Tencent Weibo</value>
-  </data>
-  <data name="ShareSiteTwitter" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
-  <data name="ShareSiteWeibo" xml:space="preserve">
-    <value>Sina Weibo</value>
-  </data>
-  <data name="ShareSiteQzone" xml:space="preserve">
-    <value>Qzone</value>
-  </data>
-  <data name="ShareSiteNone" xml:space="preserve">
-    <value>*Copy to clipboard*</value>
-  </data>
   <data name="AlbumInfoPage" xml:space="preserve">
     <value>Info</value>
   </data>
@@ -734,15 +650,6 @@ Application will restart after reset.</value>
   </data>
   <data name="SetProxyFailed" xml:space="preserve">
     <value>Set proxy failed</value>
-  </data>
-  <data name="ShareFanfou" xml:space="preserve">
-    <value>Share on Fanfou</value>
-  </data>
-  <data name="ShareQzone" xml:space="preserve">
-    <value>Share on Qzone</value>
-  </data>
-  <data name="ShareTencentWeibo" xml:space="preserve">
-    <value>Share on Tencent Weibo</value>
   </data>
   <data name="SuccessfullyCopied" xml:space="preserve">
     <value>Copy successful</value>

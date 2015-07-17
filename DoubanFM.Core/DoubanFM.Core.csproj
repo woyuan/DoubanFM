@@ -81,8 +81,6 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Share.cs" />
-    <Compile Include="ShareSongInfo.cs" />
     <Compile Include="Player\Song.cs" />
     <Compile Include="Player\User.cs" />
     <Compile Include="Player\UserAssistant.cs" />

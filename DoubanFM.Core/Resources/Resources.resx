@@ -120,12 +120,6 @@
   <data name="InvalidUsername" xml:space="preserve">
     <value>Invalid username</value>
   </data>
-  <data name="ShareTextPartOne" xml:space="preserve">
-    <value>I'm listening to {0} - {1}</value>
-  </data>
-  <data name="ShareTextPartTwo" xml:space="preserve">
-    <value>( From K.F.Storm's DoubanFM {0} - {1} )</value>
-  </data>
   <data name="UnknownError" xml:space="preserve">
     <value>Unknown error</value>
   </data>

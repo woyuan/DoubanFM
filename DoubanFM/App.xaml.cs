@@ -336,7 +336,6 @@ namespace DoubanFM
 			var player = FindResource("Player") as Player;
 			if (player != null) player.SaveSettings();
 			if (mainWindow._lyricsSetting != null) mainWindow._lyricsSetting.Save();
-			if (mainWindow.ShareSetting != null) mainWindow.ShareSetting.Save();
 		}
 
 		/// <summary>

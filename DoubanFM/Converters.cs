@@ -4,13 +4,11 @@
  * Website : http://www.kfstorm.com
  * */
 
-using System.Collections.Generic;
 using System.Windows.Data;
 using System;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Controls;
-using DoubanFM.Core;
 
 namespace DoubanFM
 {
@@ -335,50 +333,7 @@ namespace DoubanFM
 		}
 	}
 
-	/// <summary>
-	/// 将Share.Sites转换为字符串
-	/// </summary>
-	public class ShareSitesToStringConverter : IValueConverter
-	{
-        public static Dictionary<Core.Share.Sites, string> SiteName;
-
-        static ShareSitesToStringConverter()
-        {
-            SiteName = new Dictionary<Share.Sites, string>
-                           {
-                                { Core.Share.Sites.Douban, Resources.Resources.ShareSiteDouban },
-                                { Core.Share.Sites.Facebook, Resources.Resources.ShareSiteFacebook },
-                                { Core.Share.Sites.Fanfou, Resources.Resources.ShareSiteFanfou },
-                                { Core.Share.Sites.Kaixin, Resources.Resources.ShareSiteKaixin },
-                                { Core.Share.Sites.Msn, Resources.Resources.ShareSiteMsn },
-                                { Core.Share.Sites.Renren, Resources.Resources.ShareSiteRenren },
-                                { Core.Share.Sites.TencentWeibo, Resources.Resources.ShareSiteTencentWeibo },
-                                { Core.Share.Sites.Twitter, Resources.Resources.ShareSiteTwitter },
-                                { Core.Share.Sites.Weibo, Resources.Resources.ShareSiteWeibo },
-                                { Core.Share.Sites.Qzone, Resources.Resources.ShareSiteQzone },
-                                { Core.Share.Sites.None, Resources.Resources.ShareSiteNone }
-                           };
-        }
-
-		public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-		{
-			if (Enum.IsDefined(typeof(Core.Share.Sites), value))
-			{
-				return SiteName[(Core.Share.Sites)value];
-			}
-			else
-			{
-				return null;
-			}
-		}
-
-		public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-		{
-			throw new NotImplementedException();
-		}
-	}
-
-	/// <summary>
+    /// <summary>
 	/// 根据频道确定能否使用收藏功能
 	/// </summary>
 	public class ChannelToCanFavoriteVisibilityConverter : IValueConverter
